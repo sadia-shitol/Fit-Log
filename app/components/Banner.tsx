@@ -10,7 +10,7 @@ const Banner = () => {
           <Image
             alt='Fitness Banner'
             src={banner}
-            className='max-w-sm ml-3.5'
+            className='max-w-sm  h-100 w-100 ml-3.5'
           />
 
           <div>
@@ -21,10 +21,16 @@ const Banner = () => {
               TRAIN WITH INTENT.
               <br /> LOG EVERY SET.
             </h1>
-            <p className='py-6'>
+            <p className='py-4'>
               FitLog is a dark, no-nonsense gym companion: pick a lift, lock it
               <br />
               into today&apos;s plan, and watch the week&apos;s work add up.
+            </p>
+            <p className='py-4'>
+              Choose from a focused library of exercises, build your daily
+              workout
+              <br />
+              plan, and track every set, rep, and result.
             </p>
             <button className='btn bg-[#c2f800] text-black border-[#c2f800] hover:bg-[#b5e800] hover:border-[#b5e800]'>
               BROWSE WORKOUTS
