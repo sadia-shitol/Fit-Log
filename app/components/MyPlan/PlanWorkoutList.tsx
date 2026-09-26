@@ -22,13 +22,13 @@ const PlanWorkoutList = ({ workouts, type }: PlanWorkoutListProps) => {
   }
 
   return (
-    <div className='space-y-3 pl-0 pr-0 py-2'>
+    <div className='space-y-3 py-4'>
       {workouts.map((workout) => (
         <div
           key={workout.id}
           className='flex flex-col gap-4 rounded-xl border border-gray-800 bg-[#15171d] p-3 sm:flex-row sm:items-center'
         >
-          {/* Image */}
+          {/* Workout Image */}
           <Image
             src={workout.image}
             alt={workout.name}
@@ -37,7 +37,7 @@ const PlanWorkoutList = ({ workouts, type }: PlanWorkoutListProps) => {
             className='h-[85px] w-full rounded-xl object-cover sm:w-[125px]'
           />
 
-          {/* Workout information */}
+          {/* Workout Information */}
           <div className='min-w-0 flex-1'>
             <h3 className='truncate text-base font-bold uppercase text-white'>
               {workout.name}
@@ -54,7 +54,7 @@ const PlanWorkoutList = ({ workouts, type }: PlanWorkoutListProps) => {
             </div>
           </div>
 
-          {/* Buttons */}
+          {/* Action Buttons */}
           <div className='flex shrink-0 gap-2 sm:ml-auto'>
             <Link
               href={`/exercises/${workout.id}`}
@@ -64,6 +64,7 @@ const PlanWorkoutList = ({ workouts, type }: PlanWorkoutListProps) => {
             </Link>
 
             <button
+              type='button'
               onClick={() => handleMarkAsDone(workout.id)}
               className='btn btn-sm rounded-full border-[#ccff00] bg-[#ccff00] px-5 text-black hover:border-[#b5e800] hover:bg-[#b5e800]'
             >
