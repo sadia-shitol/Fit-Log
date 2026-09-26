@@ -4,7 +4,7 @@ import logo from '@/public/assets/logo.png'
 import Container from '@/app/components/Container'
 const Footer = () => {
   return (
-    <div>
+    <div className='bg-base-200 shadow-sm'>
       <Container>
         <footer className='footer sm:footer-horizontal  text-neutral-content items-center p-4'>
           <aside className='grid-flow-col items-center'>

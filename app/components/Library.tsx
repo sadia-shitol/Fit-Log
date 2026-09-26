@@ -12,7 +12,7 @@ const Library = async () => {
   const workoutsData = await getWorkouts()
   return (
     <Container>
-      <section className='justify-center container'>
+      <section id='library' className='justify-center container w-full p-6'>
         <h2 className='text-3xl font-bold m-3 py-3'>THE LIBRARY</h2>
         <p className='text-xl font-bold ml-3 mb-3 pb-3'>
           Twelve lifts covering every major muscle group

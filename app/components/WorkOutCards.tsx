@@ -37,9 +37,9 @@ const WorkoutCard = ({ workout }: WorkoutCardProps) => {
 
             <p className='mb-5 text-sm text-gray-400'>{workout.equipment}</p>
 
-            <div className='flex items-center justify-between border border-gray-800 px-3 py-2 text-sm text-gray-300'>
+            <div className='flex items-center justify-between border border-gray-800 rounded-xl px-3 py-2 text-sm text-gray-300'>
               <span className='flex items-center gap-2'>
-                <span className='text-gray-400'>◯</span>
+                <span className='text-[#ccff00]'>◯</span>
                 {workout.duration} min
               </span>
 
@@ -49,7 +49,7 @@ const WorkoutCard = ({ workout }: WorkoutCardProps) => {
               </span>
 
               <span className='flex items-center gap-2'>
-                <span className='text-yellow-400'>☆</span>
+                <span className='text-[#ccff00]'>☆</span>
                 {workout.rating}
               </span>
             </div>

@@ -20,7 +20,7 @@ const ExerciseDetailsPage = async ({ params }: IExerciseDetailsPageProps) => {
   return (
     <Container>
       <section className='p-8 grid grid-cols-1 gap-8 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-2 lg:items-stretch'>
-        <div className='relative min-h-0  overflow-hidden rounded-xl border border-gray-800'>
+        <div className='relative aspect-[4/3] w-full overflow-hidden rounded-xl lg:aspect-auto border border-gray-800'>
           <Image
             src={exercise.image}
             alt={exercise.name}

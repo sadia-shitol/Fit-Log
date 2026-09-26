@@ -1,11 +1,23 @@
-import React from 'react'
+'use client'
 import banner from '@/public/assets/banner.png'
 import Image from 'next/image'
 import Container from './Container'
+import Link from 'next/link'
+import Library from './Library'
 const Banner = () => {
+  const handleBrowseWorkouts = () => {
+    const library = document.getElementById('library')
+
+    if (library) {
+      library.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
+    }
+  }
   return (
     <Container>
-      <div className='hero min-h-screen rounded-4xl shadow-lg'>
+      <div className='hero min-h-screen rounded-4xl shadow-lg bg-base-200 mt-3'>
         <div className='hero-content flex-col lg:flex-row-reverse'>
           <Image
             alt='Fitness Banner'
@@ -14,7 +26,7 @@ const Banner = () => {
           />
 
           <div>
-            <p className='mb-4 text-lg font-bold uppercase text-[#c2f800]'>
+            <p className='mb-4 text-lg font-bold uppercase text-[#ccff00]'>
               WORKOUT LIBRARY
             </p>
             <h1 className='text-5xl font-bold'>
@@ -32,7 +44,10 @@ const Banner = () => {
               <br />
               plan, and track every set, rep, and result.
             </p>
-            <button className='btn bg-[#c2f800] text-black border-[#c2f800] hover:bg-[#b5e800] hover:border-[#b5e800]'>
+            <button
+              onClick={handleBrowseWorkouts}
+              className='btn bg-[#ccff00] text-black border-[#ccff00] hover:bg-[#b5e800] hover:border-[#b5e800]'
+            >
               BROWSE WORKOUTS
             </button>
           </div>
