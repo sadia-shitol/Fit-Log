@@ -5,7 +5,7 @@ import Container from './Container'
 const Banner = () => {
   return (
     <Container>
-      <div className='hero min-h-screen rounded-4xl shadow-2xl'>
+      <div className='hero min-h-screen rounded-4xl shadow-lg'>
         <div className='hero-content flex-col lg:flex-row-reverse'>
           <Image
             alt='Fitness Banner'
