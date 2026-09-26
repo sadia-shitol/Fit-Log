@@ -97,23 +97,27 @@ const ExerciseDetailsPage = async ({ params }: IExerciseDetailsPageProps) => {
             </h2>
 
             <ol className='mt-3 space-y-3'>
-              {exercise.instructions.map((instruction, index) => (
-                <li
-                  key={index}
-                  className='flex gap-3 text-xs leading-5 text-gray-400'
-                >
-                  <span className='font-bold text-[#c2f800]'>{index + 1}.</span>
+              {exercise.instructions.map(
+                (instruction: string, index: number) => (
+                  <li
+                    key={index}
+                    className='flex gap-3 text-xs leading-5 text-gray-400'
+                  >
+                    <span className='font-bold text-[#c2f800]'>
+                      {index + 1}.
+                    </span>
 
-                  <span>{instruction}</span>
-                </li>
-              ))}
+                    <span>{instruction}</span>
+                  </li>
+                )
+              )}
             </ol>
           </div>
 
           {/* Buttons */}
           <div className='mt-6 flex flex-wrap gap-3'>
             <button className='btn border-[#c2f800] bg-[#c2f800] text-black hover:border-[#b5e800] hover:bg-[#b5e800]'>
-              Add to today's plan
+              Add to today&apos;s plan
             </button>
 
             <button className='btn border-gray-700 bg-transparent text-white hover:border-[#c2f800]'>
