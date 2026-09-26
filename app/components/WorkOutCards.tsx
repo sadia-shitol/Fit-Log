@@ -5,11 +5,10 @@ import { Workout } from '@/app/types/workouts.type'
 interface WorkoutCardProps {
   workout: Workout
 }
-
 const WorkoutCard = ({ workout }: WorkoutCardProps) => {
   return (
     <div>
-      <Link href={`/workout/${workout.id}`}>
+      <Link href={`/exercises/${workout.id}`}>
         <div className='overflow-hidden rounded-2xl border border-gray-700 bg-[#15171d] transition-all duration-300 hover:-translate-y-1 hover:border-[#c2f800]'>
           <div className='relative h-52 w-full'>
             <Image
