@@ -4,10 +4,14 @@ import { useState } from 'react'
 import SortDropdown from './SortDropdown'
 import PlanWorkoutList from './PlanWorkoutList'
 import { useWorkout } from '@/app/context/WorkoutContext'
+
 const PlanTabs = () => {
   const [activeTab, setActiveTab] = useState<'plan' | 'saved'>('plan')
+
   const { plan, saved } = useWorkout()
+
   const workouts = activeTab === 'plan' ? plan : saved
+
   return (
     <section>
       <div className='mb-4 flex items-center justify-between'>
@@ -36,9 +40,7 @@ const PlanTabs = () => {
         <SortDropdown />
       </div>
 
-      <div>
-        {activeTab === 'plan' ? <PlanWorkoutList /> : <PlanWorkoutList />}
-      </div>
+      <PlanWorkoutList workouts={workouts} type={activeTab} />
     </section>
   )
 }

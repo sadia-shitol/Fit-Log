@@ -3,13 +3,27 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useWorkout } from '@/app/context/WorkoutContext'
+import { Workout } from '@/app/types/workouts.type'
 
-const PlanWorkoutList = () => {
-  const { plan } = useWorkout()
+type PlanWorkoutListProps = {
+  workouts: Workout[]
+  type: 'plan' | 'saved'
+}
+
+const PlanWorkoutList = ({ workouts, type }: PlanWorkoutListProps) => {
+  const { removeFromPlan, removeFromSaved } = useWorkout()
+
+  const handleMarkAsDone = (id: string) => {
+    if (type === 'plan') {
+      removeFromPlan(id)
+    } else {
+      removeFromSaved(id)
+    }
+  }
 
   return (
-    <div className='space-y-3'>
-      {plan.map((workout) => (
+    <div className='space-y-3 pl-0 pr-0 py-2'>
+      {workouts.map((workout) => (
         <div
           key={workout.id}
           className='flex flex-col gap-4 rounded-xl border border-gray-800 bg-[#15171d] p-3 sm:flex-row sm:items-center'
@@ -34,9 +48,7 @@ const PlanWorkoutList = () => {
             <div className='mt-2 flex flex-wrap items-center gap-3 text-xs text-[#ccff00]'>
               <span>◯ {workout.duration} min</span>
 
-              <span className='text-[#ccff00]'>
-                💪🏻 {workout.caloriesBurned} kcal
-              </span>
+              <span>💪🏻 {workout.caloriesBurned} kcal</span>
 
               <span>★ {workout.rating}</span>
             </div>
@@ -45,13 +57,16 @@ const PlanWorkoutList = () => {
           {/* Buttons */}
           <div className='flex shrink-0 gap-2 sm:ml-auto'>
             <Link
-              href={`/exercise/${workout.id}`}
+              href={`/exercises/${workout.id}`}
               className='btn btn-sm rounded-full border border-gray-700 bg-transparent px-4 text-white hover:border-[#ccff00]'
             >
               View Details
             </Link>
 
-            <button className='btn btn-sm rounded-full border-[#ccff00] bg-[#ccff00] px-5 text-black hover:border-[#b5e800] hover:bg-[#b5e800]'>
+            <button
+              onClick={() => handleMarkAsDone(workout.id)}
+              className='btn btn-sm rounded-full border-[#ccff00] bg-[#ccff00] px-5 text-black hover:border-[#b5e800] hover:bg-[#b5e800]'
+            >
               Mark as Done
             </button>
           </div>

@@ -124,8 +124,8 @@ Some features that can be added in future versions include:
 Frontend Developer | Aspiring Software Engineer
 
 - GitHub: [sadia-shitol](https://github.com/sadia-shitol)
-- LinkedIn: [Sadia Bintay Mostafiz](https://linkedin.com/in/sadia-bintay-mostafiz)
-- Portfolio: [sadiashitol.tech](https://sadiashitol.tech)
+- LinkedIn: [Sadia Bintay Mostafiz](https://www.linkedin.com/in/sadia-bintay-mostafiz-b4177a267/)
+- Portfolio: [sadiashitol.tech](https://sadia-bintay-mostafiz.vercel.app/)
 
 ---
 

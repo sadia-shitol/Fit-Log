@@ -23,7 +23,11 @@ const MyPlan = () => {
 
         <PlanTabs />
 
-        {plan.length === 0 ? <EmptyPlan /> : <PlanWorkoutList />}
+        {plan.length === 0 ? (
+          <EmptyPlan />
+        ) : (
+          <PlanWorkoutList workouts={plan} type='plan' />
+        )}
       </div>
     </Container>
   )
