@@ -65,7 +65,8 @@ const PlanWorkoutList = ({ workouts, type }: PlanWorkoutListProps) => {
 
             <button
               type='button'
-              onClick={() => handleMarkAsDone(workout.id)}
+              // onClick={() => handleMarkAsDone(workout.id)}
+
               className='btn btn-sm rounded-full border-[#ccff00] bg-[#ccff00] px-5 text-black hover:border-[#b5e800] hover:bg-[#b5e800]'
             >
               Mark as Done
