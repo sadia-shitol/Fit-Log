@@ -1,4 +1,5 @@
 import Container from '@/app/components/Container'
+import CTAButtons from '@/app/components/CTAButtons'
 import { Workout } from '@/app/types/workouts.type'
 import Image from 'next/image'
 interface IExerciseDetailsPageProps {
@@ -115,15 +116,7 @@ const ExerciseDetailsPage = async ({ params }: IExerciseDetailsPageProps) => {
           </div>
 
           {/* Buttons */}
-          <div className='mt-6 flex flex-wrap gap-3'>
-            <button className='btn border-[#c2f800] bg-[#c2f800] text-black hover:border-[#b5e800] hover:bg-[#b5e800]'>
-              Add to today&apos;s plan
-            </button>
-
-            <button className='btn border-gray-700 bg-transparent text-white hover:border-[#c2f800]'>
-              Save for later
-            </button>
-          </div>
+          <CTAButtons workout={exercise} />
         </div>
       </section>
     </Container>

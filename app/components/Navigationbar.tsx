@@ -1,19 +1,17 @@
 'use client'
-import { useEffect, useState } from 'react'
-import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import logo from '@/public/assets/logo.png'
 import Container from '@/app/components/Container'
+import { useWorkout } from '../context/WorkoutContext'
 
 const Navigationbar = () => {
+  const { plan, saved } = useWorkout()
   const pathname = usePathname()
   const isWorkoutActive = pathname === '/' || pathname.startsWith('/workout')
 
   const isMyPlanActive = pathname === '/my-plan'
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
 
   return (
     <div className='bg-base-200 shadow-sm'>
@@ -129,7 +127,7 @@ const Navigationbar = () => {
                 </Link>
 
                 <span className='flex h-5 w-5 items-center justify-center rounded-full bg-[#ccff00] text-xs font-semibold text-black'>
-                  0
+                  {plan.length}
                 </span>
               </div>
 
@@ -140,7 +138,7 @@ const Navigationbar = () => {
                 </Link>
 
                 <span className='flex h-5 w-5 items-center justify-center rounded-full border border-gray-600 text-xs text-gray-300'>
-                  0
+                  {saved.length}
                 </span>
               </div>
             </div>

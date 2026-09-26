@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import Navigationbar from './components/Navigationbar'
-import Container from './components/Container'
+import { WorkoutProvider } from './context/WorkoutContext'
 import Footer from './components/Footer'
+import ToastProvider from '@/app/components/ToastProvider'
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
@@ -26,10 +27,13 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className='min-h-full flex flex-col container'>
-        <Navigationbar />
+        <WorkoutProvider>
+          <Navigationbar />
 
-        {children}
-        <Footer />
+          {children}
+          <Footer />
+          <ToastProvider />
+        </WorkoutProvider>
       </body>
     </html>
   )
