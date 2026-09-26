@@ -2,14 +2,14 @@
 
 import { useState } from 'react'
 import SortDropdown from './SortDropdown'
-import EmptyPlan from './EmptyPlan'
-
+import PlanWorkoutList from './PlanWorkoutList'
+import { useWorkout } from '@/app/context/WorkoutContext'
 const PlanTabs = () => {
   const [activeTab, setActiveTab] = useState<'plan' | 'saved'>('plan')
-
+  const { plan, saved } = useWorkout()
+  const workouts = activeTab === 'plan' ? plan : saved
   return (
     <section>
-      {/* Tabs + Sort */}
       <div className='mb-4 flex items-center justify-between'>
         <div className='flex rounded-lg border border-gray-800 bg-[#15171d] p-1'>
           <button
@@ -36,8 +36,9 @@ const PlanTabs = () => {
         <SortDropdown />
       </div>
 
-      {/* Content */}
-      <div>{activeTab === 'plan' ? <EmptyPlan /> : <EmptyPlan />}</div>
+      <div>
+        {activeTab === 'plan' ? <PlanWorkoutList /> : <PlanWorkoutList />}
+      </div>
     </section>
   )
 }

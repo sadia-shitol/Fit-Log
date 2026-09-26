@@ -131,7 +131,6 @@ const Navigationbar = () => {
                 </span>
               </div>
 
-              {/* SAVED */}
               <div className='flex items-center gap-2'>
                 <Link href='/my-plan' className='text-sm text-white'>
                   Saved
